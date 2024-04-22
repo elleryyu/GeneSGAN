@@ -6,14 +6,17 @@ if __name__ == '__main__':
 	output_dir = './genesgan'
 	if not os.path.exists(output_dir):
 		os.makedirs(output_dir)
+	current_directory = os.getcwd()
+	print("Current working directory:", current_directory)
 
-	image_data = pd.read_csv('toy_data_imaging.csv')
-	gene_data = pd.read_csv('toy_data_gene.csv')
+	image_data = pd.read_csv('./datasets/toy_data_imaging.csv')
+	gene_data = pd.read_csv('./datasets/toy_data_gene.csv')
 
-	fold_number = 1
+	fold_number = 21
 	ncluster = 3
 	start_saving_epoch = 20000
 	max_epoch = 30000
+
 	WD = 0.11
 	AQ = 30
 	cluster_loss = 0.01
